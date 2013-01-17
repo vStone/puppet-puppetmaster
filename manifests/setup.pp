@@ -79,8 +79,6 @@ class puppetmaster::setup (
     ssl  => true,
   }
 
-
-  include passenger
   include apache
   include apache::mod::passenger
   include apache::mod::headers
