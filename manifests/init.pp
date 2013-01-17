@@ -61,6 +61,9 @@ class puppetmaster (
   $puppet_module_subtrees = ['upstream', 'internal', 'dev'],
 ) {
 
+
+  include hiera
+
   if ! defined (Stage['pre']) {
     stage {'pre': before => Stage['main'], }
   }
