@@ -63,7 +63,6 @@ class puppetmaster::setup (
     ],
   }
 
-
   class {'foreman':
     enc               => true,
     unattended        => false,
@@ -75,6 +74,7 @@ class puppetmaster::setup (
   include foreman::service::disabled
 
   class {'foreman_proxy':
+    repo => false,
     tftp => false,
     ssl  => true,
   }
