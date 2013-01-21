@@ -74,9 +74,10 @@ class puppetmaster::setup (
   include foreman::service::disabled
 
   class {'foreman_proxy':
-    repo => false,
-    tftp => false,
-    ssl  => true,
+    repo          => false,
+    tftp          => false,
+    ssl           => true,
+    trusted_hosts => [ $::fqdn, 'localhost' ],
   }
 
   include apache
